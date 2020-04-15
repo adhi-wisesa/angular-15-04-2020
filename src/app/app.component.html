@@ -1,5 +1,5 @@
 <hello name="{{ name }}"></hello>
-<p>
+<!--<p>
   Cara menulis di Angular
   <br> <br>
   {{"Cara Menulis di Angular"}}
@@ -13,4 +13,34 @@
 
 <div *ngFor= "let buah of itembuah; let i = index">
   {{i+1}}. {{ buah.nama }}-{{buah.harga | currency: "Rp"}}
+</div>
+<br>
+<div *ngFor="let data of ItemArr">
+  {{data}}
+</div>-->
+
+<div *ngIf="show">
+  <br>
+  show is true
+</div>
+<ng-template *ngIf="show; then showBlock; else notShowBlock">
+</ng-template>
+{{show}}
+
+<ng-template #showBlock>
+  <p>show is true</p>
+</ng-template>
+
+<ng-template #notShowBlock>
+  <p>show is false</p>
+</ng-template>
+<br><br>
+
+<input [(ngModel)] = user type="text">
+<p *ngIf="user"> halo {{user}} </p>
+
+<div>
+  <button (click)="klikButton()"> Test</button>
+  <br>
+  {{pesan}}
 </div>
